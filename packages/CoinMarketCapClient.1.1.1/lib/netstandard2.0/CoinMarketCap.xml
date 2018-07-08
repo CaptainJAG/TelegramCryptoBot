@@ -1,0 +1,306 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CoinMarketCap</name>
+    </assembly>
+    <members>
+        <member name="T:CoinMarketCap.CoinMarketCapClient">
+            <summary>
+            Coin Market Cap Api Client.
+            </summary>
+        </member>
+        <member name="M:CoinMarketCap.CoinMarketCapClient.GetInstance">
+            <summary>
+            Retrieves the an instance of the CoinMarketCapClient.
+            </summary>
+            <returns>CoinMarketCapClient instance.</returns>
+        </member>
+        <member name="M:CoinMarketCap.CoinMarketCapClient.#ctor(System.Net.Http.HttpClientHandler)">
+            <summary>
+            Initializes a new instance of the CoinMarketCapClient class.
+            </summary>
+            <param name="httpClientHandler">Custom HTTP client handler. Can be used to define proxy settigs</param>
+        </member>
+        <member name="M:CoinMarketCap.CoinMarketCapClient.#ctor">
+            <summary>
+            Initializes a new instance of the CoinMarketCapClient class.
+            </summary>
+        </member>
+        <member name="M:CoinMarketCap.CoinMarketCapClient.GetTickerListAsync(System.Nullable{System.Int32},CoinMarketCap.Enums.ConvertEnum)">
+            <summary>
+            Retrieves a list of Tickers.
+            </summary>
+            <param name="limit">Limit the amount of Tickers.</param>
+            <param name="convert">Convert the crypto volumes to the given Fiat currency.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CoinMarketCap.CoinMarketCapClient.GetTickerAsync(System.String,CoinMarketCap.Enums.ConvertEnum)">
+            <summary>
+            Retrieves the Ticker for given cryptoCurrency value.
+            </summary>
+            <param name="cryptoCurrency">The Ticker name of the desired cryptoCurrency.</param>
+            <param name="convert">Convert the crypto volumes to the given Fiat currency.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CoinMarketCap.CoinMarketCapClient.GetGlobalDataAsync(CoinMarketCap.Enums.ConvertEnum)">
+            <summary>
+            Retrieves the global market cap for crypto currencies.
+            </summary>
+            <param name="convert">Convert the crypto volumes to the given Fiat currency.</param>
+            <returns>A GlobalDataEntity with the requested information in the given currency.</returns>
+        </member>
+        <member name="M:CoinMarketCap.CoinMarketCapClient.Dispose(System.Boolean)">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or
+            resetting unmanaged resources.
+            </summary>
+            <param name="disposing">True to release both managed and unmanaged resources; false to
+            release only unmanaged resources.</param>
+        </member>
+        <member name="M:CoinMarketCap.CoinMarketCapClient.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or
+            resetting unmanaged resources.
+            </summary>
+            <seealso cref="M:System.IDisposable.Dispose()"/>
+        </member>
+        <member name="T:CoinMarketCap.Entities.GlobalDataEntity">
+            <summary>
+            Global market cap information entity.
+            </summary>
+        </member>
+        <member name="P:CoinMarketCap.Entities.GlobalDataEntity.MarketCapUsd">
+            <summary>
+            Market capitalization in USD.
+            </summary>
+        </member>
+        <member name="P:CoinMarketCap.Entities.GlobalDataEntity.Volume24hUsd">
+            <summary>
+            Market volume in the last 24 hours.
+            </summary>
+        </member>
+        <member name="P:CoinMarketCap.Entities.GlobalDataEntity.BTCPercentageOfMarketCap">
+            <summary>
+            Bitcoin percentage of total market capitalization.
+            </summary>
+        </member>
+        <member name="P:CoinMarketCap.Entities.GlobalDataEntity.ActiveCurrencies">
+            <summary>
+            Number of active crypto currencies.
+            </summary>
+        </member>
+        <member name="P:CoinMarketCap.Entities.GlobalDataEntity.ActiveAssets">
+            <summary>
+            Number of active assets.
+            </summary>
+        </member>
+        <member name="P:CoinMarketCap.Entities.GlobalDataEntity.ActiveMarkets">
+            <summary>
+            Number of active markets.
+            </summary>
+        </member>
+        <member name="T:CoinMarketCap.Entities.TickerEntity">
+            <summary>
+            Ticker information.
+            </summary>
+        </member>
+        <member name="P:CoinMarketCap.Entities.TickerEntity.Id">
+            <summary>
+            Crypto Id
+            </summary>
+        </member>
+        <member name="P:CoinMarketCap.Entities.TickerEntity.Name">
+            <summary>
+            Crypto Name.
+            </summary>
+        </member>
+        <member name="P:CoinMarketCap.Entities.TickerEntity.Symbol">
+            <summary>
+            Crypto Symbol.
+            </summary>
+        </member>
+        <member name="P:CoinMarketCap.Entities.TickerEntity.Rank">
+            <summary>
+            Rank.
+            </summary>
+        </member>
+        <member name="P:CoinMarketCap.Entities.TickerEntity.PriceBtc">
+            <summary>
+            Price in BTC.
+            </summary>
+        </member>
+        <member name="P:CoinMarketCap.Entities.TickerEntity.AvailableSupply">
+            <summary>
+            Available Supply.
+            </summary>
+        </member>
+        <member name="P:CoinMarketCap.Entities.TickerEntity.TotalSupply">
+            <summary>
+            Total Supply.
+            </summary>
+        </member>
+        <member name="P:CoinMarketCap.Entities.TickerEntity.PercentChange1h">
+            <summary>
+            Percentage change in the last hour.
+            </summary>
+        </member>
+        <member name="P:CoinMarketCap.Entities.TickerEntity.PercentChange24h">
+            <summary>
+            Percentage change in the las 24 hours.
+            </summary>
+        </member>
+        <member name="P:CoinMarketCap.Entities.TickerEntity.PercentChange7d">
+            <summary>
+            Percentage change in the last 7 days.
+            </summary>
+        </member>
+        <member name="P:CoinMarketCap.Entities.TickerEntity.LastUpdatedUnixTime">
+            <summary>
+            Last updated time in Unix time format.
+            </summary>
+        </member>
+        <member name="P:CoinMarketCap.Entities.TickerEntity.LastUpdated">
+            <summary>
+            Last updated date.
+            </summary>
+        </member>
+        <member name="P:CoinMarketCap.Entities.TickerEntity.PriceOther">
+            <summary>
+            Price in the given Fiat currency.
+            </summary>
+        </member>
+        <member name="P:CoinMarketCap.Entities.TickerEntity.Volume24hOther">
+            <summary>
+            Volume in the las 24 in the given Fiat currency.
+            </summary>
+        </member>
+        <member name="P:CoinMarketCap.Entities.TickerEntity.MarketCapOther">
+            <summary>
+            Market cap in the given Fiat currency.
+            </summary>
+        </member>
+        <member name="P:CoinMarketCap.Entities.TickerEntity.PriceUsd">
+            <summary>
+            Price in USD.
+            </summary>
+        </member>
+        <member name="P:CoinMarketCap.Entities.TickerEntity.Volume24hUsd">
+            <summary>
+            Volume in the last 24 hours in USD.
+            </summary>
+        </member>
+        <member name="P:CoinMarketCap.Entities.TickerEntity.MarketCapUsd">
+            <summary>
+            Market cap in USD.
+            </summary>
+        </member>
+        <member name="T:CoinMarketCap.Enums.ConvertEnum">
+            <summary>
+            Available Fiat currencies in CoinMarketCap Api.
+            </summary>
+        </member>
+        <member name="F:CoinMarketCap.Enums.ConvertEnum.AUD">
+            <summary>
+            Australian Dollar.
+            </summary>
+        </member>
+        <member name="F:CoinMarketCap.Enums.ConvertEnum.BRL">
+            <summary>
+            Brazilian Real.
+            </summary>
+        </member>
+        <member name="F:CoinMarketCap.Enums.ConvertEnum.CAD">
+            <summary>
+            Canadian Dollar.
+            </summary>
+        </member>
+        <member name="F:CoinMarketCap.Enums.ConvertEnum.CHF">
+            <summary>
+            Swiss Franc.
+            </summary>
+        </member>
+        <member name="F:CoinMarketCap.Enums.ConvertEnum.CNY">
+            <summary>
+            Chinese Yuan.
+            </summary>
+        </member>
+        <member name="F:CoinMarketCap.Enums.ConvertEnum.EUR">
+            <summary>
+            Euro.
+            </summary>
+        </member>
+        <member name="F:CoinMarketCap.Enums.ConvertEnum.GBP">
+            <summary>
+            British Pound.
+            </summary>
+        </member>
+        <member name="F:CoinMarketCap.Enums.ConvertEnum.HKD">
+            <summary>
+            Hong Kong Dollar
+            </summary>
+        </member>
+        <member name="F:CoinMarketCap.Enums.ConvertEnum.IDR">
+            <summary>
+            Indonesian Rupiah.
+            </summary>
+        </member>
+        <member name="F:CoinMarketCap.Enums.ConvertEnum.INR">
+            <summary>
+            Indian Rupee.
+            </summary>
+        </member>
+        <member name="F:CoinMarketCap.Enums.ConvertEnum.JPY">
+            <summary>
+            Japanese Yen.
+            </summary>
+        </member>
+        <member name="F:CoinMarketCap.Enums.ConvertEnum.KRW">
+            <summary>
+            South Korean Won.
+            </summary>
+        </member>
+        <member name="F:CoinMarketCap.Enums.ConvertEnum.MXN">
+            <summary>
+            Mexican Peso.
+            </summary>
+        </member>
+        <member name="F:CoinMarketCap.Enums.ConvertEnum.RUB">
+            <summary>
+            Russian Rubble.
+            </summary>
+        </member>
+        <member name="F:CoinMarketCap.Enums.ConvertEnum.USD">
+            <summary>
+            United States Dollar.
+            </summary>
+        </member>
+        <member name="T:CoinMarketCap.Core.ICoinMarketCapClient">
+            <summary>
+            Coin Market Cap Api Client.
+            </summary>
+        </member>
+        <member name="M:CoinMarketCap.Core.ICoinMarketCapClient.GetTickerListAsync(System.Nullable{System.Int32},CoinMarketCap.Enums.ConvertEnum)">
+            <summary>
+            Retrieves a list of Tickers.
+            </summary>
+            <param name="limit">Limit the amount of Tickers.</param>
+            <param name="convert">Convert the crypto volumes to the given Fiat currency.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CoinMarketCap.Core.ICoinMarketCapClient.GetTickerAsync(System.String,CoinMarketCap.Enums.ConvertEnum)">
+            <summary>
+            Retrieves the Ticker for given cryptoCurrency value.
+            </summary>
+            <param name="cryptoCurrency">The Ticker name of the desired cryptoCurrency.</param>
+            <param name="convert">Convert the crypto volumes to the given Fiat currency.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CoinMarketCap.Core.ICoinMarketCapClient.GetGlobalDataAsync(CoinMarketCap.Enums.ConvertEnum)">
+            <summary>
+            Retrieves the global market cap for crypto currencies.
+            </summary>
+            <param name="convert">Convert the crypto volumes to the given Fiat currency.</param>
+            <returns>A GlobalDataEntity with the requested information in the given currency.</returns>
+        </member>
+    </members>
+</doc>
