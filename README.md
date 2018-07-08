@@ -3,6 +3,8 @@ This telegram bot gets price updates from the Coin Market Cap API.
 
 You will need to get a bot API key from BotFather on Telegram and insert at top of CryptoBot.cs.
 
+This Telegram library is the unofficial C# library and is what was used for connecting to the Telegram API: https://github.com/TelegramBots/Telegram.Bot
+
 This bot uses the C# wrapper for the Coin Market Cap API from this repository: https://github.com/binamonk/CoinMarketCapClient
 
 To add additional assets just add the appropriate name for the asset from the Coin Market Cap API documentation here: https://coinmarketcap.com/api/.  The three arrays(_currency, _priceChangeLastHourCommand, _priceChangeLastDayCommand) must match indexes for it to select the proper command.
